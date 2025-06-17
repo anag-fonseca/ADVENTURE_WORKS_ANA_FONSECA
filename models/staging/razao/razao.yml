@@ -1,0 +1,8 @@
+
+sources:
+  - name: razao
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: salesorderheadersalesreason
+      - name: salesreason

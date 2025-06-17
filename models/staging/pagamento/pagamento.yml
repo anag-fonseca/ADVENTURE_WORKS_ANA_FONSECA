@@ -1,0 +1,8 @@
+
+sources:
+  - name: pagamento
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: personcreditcard
+      - name: creditcard

@@ -1,0 +1,10 @@
+
+sources:
+  - name: localizacao
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: countryregion
+      - name: stateprovince
+      - name: address
+      - name: businessentityaddress

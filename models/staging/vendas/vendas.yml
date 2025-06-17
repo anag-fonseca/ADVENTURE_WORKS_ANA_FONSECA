@@ -1,0 +1,8 @@
+
+sources:
+  - name: vendas
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: salesorderdetail
+      - name: salesorderheader

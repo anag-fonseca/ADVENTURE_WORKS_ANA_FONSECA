@@ -1,0 +1,9 @@
+
+sources:
+  - name: produto
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: productcategory
+      - name: productsubcategory
+      - name: product
