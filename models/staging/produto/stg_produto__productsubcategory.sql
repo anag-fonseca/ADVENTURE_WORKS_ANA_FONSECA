@@ -9,8 +9,8 @@ source as (
 renamed as (
 
     select
-        cast(productsubcategoryid as varchar) as productsubcategory_id,
-        cast(productcategoryid as varchar) as productsubcategory_categoria_id,
+        cast(productsubcategoryid as int) as productsubcategory_id,
+        cast(productcategoryid as int) as productsubcategory_categoria_id,
         cast(name as varchar) as productsubcategory_nome,
         cast(rowguid as varchar) as productsubcategory_rowguid,
         cast(modifieddate as varchar) as productsubcategory_modieddate

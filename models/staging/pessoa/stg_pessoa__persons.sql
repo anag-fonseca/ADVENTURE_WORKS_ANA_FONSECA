@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        cast(businessentityid as varchar) as person_id,
+        cast(businessentityid as int) as person_id,
         cast(persontype as varchar) as person_tipo,
         cast(namestyle as varchar) as person_nome_estilo,
         cast(title as varchar) as person_titulo,
