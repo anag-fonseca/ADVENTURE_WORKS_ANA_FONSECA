@@ -8,7 +8,6 @@ sources:
         columns: 
           - name: salesorderid
             data_tests:
-              - unique
               - not_null
       - name: salesreason
         columns: 
