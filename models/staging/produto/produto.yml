@@ -5,5 +5,20 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: productcategory
+        columns: 
+          - name: productcategoryid
+            data_tests:
+              - unique
+              - not_null
       - name: productsubcategory
+        columns: 
+          - name: productsubcategoryid
+            data_tests:
+              - unique
+              - not_null
       - name: product
+        columns: 
+          - name: productid
+            data_tests:
+              - unique
+              - not_null
