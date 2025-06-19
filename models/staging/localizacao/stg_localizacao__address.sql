@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        cast(addressid as int) as address_id,
+        cast(addressid as int) as address_endereco_id,
         cast(addressline1 as varchar) as address_linha1,
         cast(addressline2 as varchar) as address_linha2,
         cast(city as varchar) as address_cidade,

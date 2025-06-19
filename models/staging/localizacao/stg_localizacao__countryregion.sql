@@ -9,9 +9,9 @@ source as (
 renamed as (
 
     select
-        cast(countryregioncode as varchar) as country_codigo,
-        cast(name as varchar) as country_nome,
-        cast(modifieddate as varchar) as country_data_modicacao
+        cast(countryregioncode as varchar) as pais_codigo,
+        cast(name as varchar) as pais_nome,
+        cast(modifieddate as varchar) as pais_data_modicacao
 
     from source
 
