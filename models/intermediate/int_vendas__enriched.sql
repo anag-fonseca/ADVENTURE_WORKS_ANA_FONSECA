@@ -2,20 +2,21 @@ with
 -- import models
 salesorderdatail as (
     select *
-    from {{ ref('stg_produto__product')}}
+    from {{ ref('stg_vendas__salesorderdetail')}}
 )
-salesorderheader as (
+, salesorderheader as (
     select *
-    from {{ ref('stg_produto__productcategory')}}
+    from {{ ref('stg_vendas__salesorderheader')}}
 )
 
--- transformaçao
-,-- joined as (
-    select 
+-- transformaçao para construção dos dados de venda
 
-, from stg_pagamento__creditcard
-    left join personcreditcard on stg_pagamento__creditcard.creditcard_id = stg_pagamento__personcreditcard.personcreditcard_cartaoid
-)
-
-select *
-from joined
+--,--joined as (
+--    select 
+--
+--, from stg_pagamento__creditcard
+--    left join personcreditcard on stg_pagamento__creditcard.creditcard_id = stg_pagamento__personcreditcard.personcreditcard_cartaoid
+----)
+--
+--select *
+--from joined

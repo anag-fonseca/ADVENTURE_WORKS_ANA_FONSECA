@@ -1,10 +1,32 @@
-
 sources:
   - name: localizacao
     database: fea24_11
     schema: raw_adventure_works
     tables:
       - name: countryregion
+        columns:
+          - name: countryregioncode
+            data_tests:
+              - unique
+              - not_null
+
       - name: stateprovince
+        columns:
+          - name: stateprovinceid
+            data_tests:
+              - unique
+              - not_null
+
       - name: address
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
+
       - name: businessentityaddress
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
