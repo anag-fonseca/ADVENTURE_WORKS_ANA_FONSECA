@@ -1,0 +1,7 @@
+
+sources:
+  - name: pessoa
+    database: fea24_11
+    schema: raw_adventure_works
+    tables:
+      - name: person
