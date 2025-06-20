@@ -1,5 +1,5 @@
 models:
-  - name: fato_formas_pagamento
+  - name: dim_pagamento
     description: >
       Modelo que consolida as informações das formas de pagamento dos clientes,
       associando cada cliente ao seu cartão de crédito, incluindo dados como tipo,
