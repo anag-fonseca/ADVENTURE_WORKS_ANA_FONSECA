@@ -5,3 +5,8 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: person
+        columns: 
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null

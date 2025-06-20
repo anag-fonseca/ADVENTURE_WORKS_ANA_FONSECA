@@ -12,6 +12,7 @@ salesreson as (
 -- transformaçao para razões de vendas
 , joined as (
     select
+        salesorderheadersalesreason.pedido_razao_sk,
         salesorderheadersalesreason.salesorderheadersalesreason_pedido_id as pedido_id,
         salesorderheadersalesreason.salesorderheadersalesreason_razao_id as razao_id,
         salesreson.salesreason_nome as nome_razao,

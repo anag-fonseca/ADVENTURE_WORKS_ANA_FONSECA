@@ -5,4 +5,14 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: personcreditcard
+        columns:
+         - name: creditcardid
+           data_tests:
+             - unique
+             - not_null
       - name: creditcard
+        columns: 
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null

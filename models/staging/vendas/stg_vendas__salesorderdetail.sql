@@ -9,6 +9,7 @@ source as (
 renamed as (
 
     select
+       {{dbt_utils.generate_surrogate_key(['salesorderid','productid'])}} as pedido_produto_sk,
         cast(salesorderid as int) as salesorderdetail_pedido_id,
         cast(salesorderdetailid as int) as salesorderdetail_detalhe_id,
         cast(carriertrackingnumber as varchar) as salesorderdetail_carriertackingnumber,
@@ -19,7 +20,6 @@ renamed as (
         cast(unitpricediscount as numeric) as salesorderdetail_preco_unitario_desconto,
         cast(rowguid as varchar) as salesorderdetail_rowguid,
         cast(modifieddate as varchar) as salesorderdetail_data_modificacao
-
     from source
 
 )
