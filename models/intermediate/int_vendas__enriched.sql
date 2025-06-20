@@ -50,12 +50,13 @@ from salesorderdetail
         imposto,
         frete,
         total,
+        quantidade_pedido * preco_unitario as valor_bruto,
         cast( 
-            (frete/ count(*) over (partition by pedido_id)) as numeric(18,2)) as frete_alocado,
+            (total/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric) as valor_alocado,
         cast( 
-            (total/ count(*) over (partition by pedido_id)) as numeric(18,2)) as valor_alocado,
+            (frete/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric) as frete_alocado,
         cast( 
-            (imposto/ count(*) over (partition by pedido_id)) as numeric(18,2)) as imposto_alocado,
+            (imposto/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric) as imposto_alocado,
         case
             when preco_unitario_desconto > 0 then true 
             else false 
@@ -70,5 +71,6 @@ from salesorderdetail
          end as status_2
     from joined
 )
+
 select *
 from metrics
