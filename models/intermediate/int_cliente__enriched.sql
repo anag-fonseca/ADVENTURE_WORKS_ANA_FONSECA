@@ -2,7 +2,7 @@ with
 -- import models
 person as (
     select 
-        person_id as cliente_id,
+        cliente_id,
         person_tipo as tipo_cliente,
         person_email as email,
         person_demografia as demografia,

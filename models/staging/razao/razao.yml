@@ -5,13 +5,23 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: salesorderheadersalesreason
-        columns: 
+        description: "Relação entre pedidos e razões de venda"
+        columns:
           - name: salesorderid
-            data_tests:
-              - not_null
+            description: "ID do pedido"
+          - name: salesreasonid
+            description: "ID da razão de venda"
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - salesorderid
+                - salesreasonid
+
       - name: salesreason
+        description: "Tabela de razões de venda"
         columns: 
           - name: salesreasonid
-            data_tests:
+            description: "ID da razão de venda"
+            tests:
               - unique
               - not_null

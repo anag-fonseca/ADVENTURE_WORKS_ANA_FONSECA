@@ -1,0 +1,28 @@
+models:
+  - name: fato_formas_pagamento
+    description: >
+      Modelo que consolida as informações das formas de pagamento dos clientes,
+      associando cada cliente ao seu cartão de crédito, incluindo dados como tipo,
+      número e validade do cartão.
+    columns:
+      - name: cartao_id
+        description: "Identificador único do cartão de crédito."
+        tests:
+          - not_null
+
+      - name: tipo_cartao
+        description: "Tipo do cartão de crédito."
+
+      - name: numero_cartao
+        description: "Número do cartão de crédito. Pode estar mascarado por segurança."
+
+      - name: val_mes
+        description: "Mês de validade do cartão."
+
+      - name: val_ano
+        description: "Ano de validade do cartão."
+
+      - name: cliente_id
+        description: "Identificador do cliente associado ao cartão de crédito."
+        tests:
+          - not_null
