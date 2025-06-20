@@ -11,7 +11,7 @@ renamed as (
     select
         cast(salesorderid as int) as salesorderheader_pedido_id,
         cast(revisionnumber as int) as salesorderheader_numero_revisao,
-        cast(orderdate as varchar) as salesorderheader_data_pedido,
+        cast(orderdate as date) as salesorderheader_data_pedido,
         cast(duedate as varchar) as salesorderheader_duedate,
         cast(shipdate as varchar) as salesorderheader_shipdate,
         cast(status as int) as salesorderheader_status,
@@ -27,10 +27,10 @@ renamed as (
         cast(creditcardid as int) as salesorderheader_cartao_id,
         cast(creditcardapprovalcode as varchar) as salesorderheader_codigo_aprovacao_cartao,
         cast(currencyrateid as varchar) as salesorderheader_currencyrateid,
-        cast(subtotal as numeric) as salesorderheader_subtotal,
-        cast(taxamt as numeric) as salesorderheader_imposto,
-        cast(freight as numeric) as salesorderheader_frete,
-        cast(totaldue as numeric) as salesorderheader_totaldue,
+        cast(subtotal as numeric(18,3)) as salesorderheader_subtotal,
+        cast(taxamt as numeric(18,3)) as salesorderheader_imposto,
+        cast(freight as numeric(18,3)) as salesorderheader_frete,
+        cast(totaldue as numeric(18,3)) as salesorderheader_totaldue,
         cast(comment as varchar) as salesorderheader_comentario,
         cast(rowguid as varchar) as salesorderheader_rowguid,
         cast(modifieddate as varchar) as salesorderheader_data_modificacao
@@ -38,5 +38,4 @@ renamed as (
     from source
 
 )
-
 select * from renamed

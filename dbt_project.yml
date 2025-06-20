@@ -37,5 +37,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_adventure:
-    # Applies to all files under models/example/
-    example:
+    +materialized: view
+    intermediate:
+      +schema: int
+    marts:
+       materialized: table
+       +schema: marts
+    staging:
+      vendas:
+       +schema: stg_vendas
+
+
+    
