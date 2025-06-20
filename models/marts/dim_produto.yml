@@ -1,0 +1,62 @@
+models:
+  - name: dim_produto
+    description: >
+      Dimensão de produtos que combina informações detalhadas do produto com
+      suas respectivas subcategorias e categorias. A tabela contém atributos
+      descritivos de cada produto, como tamanho, cor, estilo, além da categoria
+      e subcategoria correspondente.
+
+    columns:
+      - name: produto_id
+        description: "Identificador único do produto."
+        tests:
+          - not_null
+          - unique
+
+      - name: nome_produto
+        description: "Nome descritivo do produto."
+
+      - name: produto_numero
+        description: "Código ou número identificador do produto."
+
+      - name: cor
+        description: "Cor do produto, se aplicável."
+
+      - name: custo_padrao
+        description: "Custo padrão de produção do produto."
+
+      - name: lista_preco
+        description: "Preço de venda do produto conforme tabela padrão."
+
+      - name: tamanho
+        description: "Tamanho do produto"
+
+      - name: dias_producao
+        description: "Tempo estimado de produção do produto, em dias."
+
+      - name: linha_producao
+        description: "Linha de produção responsável pela fabricação do produto."
+
+      - name: classe
+        description: "Classificação do produto"
+
+      - name: estilo
+        description: "Estilo do produto, se aplicável."
+
+      - name: modelo_producao
+        description: "Identificador do modelo de produção relacionado ao produto."
+
+      - name: data_descontinuado
+        description: "Data em que o produto foi descontinuado (caso aplicável)."
+
+      - name: categoria_id
+        description: "Identificador da categoria à qual o produto pertence."
+
+      - name: categoria_nome
+        description: "Nome da categoria do produto."
+
+      - name: subcategoria_id
+        description: "Identificador da subcategoria do produto."
+
+      - name: subcategoria_nome
+        description: "Nome da subcategoria do produto."

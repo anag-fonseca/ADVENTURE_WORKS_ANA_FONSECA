@@ -5,4 +5,14 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: salesorderdetail
+        columns: 
+          - name: salesorderdetailid
+            data_tests:
+              - unique
+              - not_null
       - name: salesorderheader
+        columns: 
+          - name: salesorderid
+            data_tests:
+              - unique
+              - not_null

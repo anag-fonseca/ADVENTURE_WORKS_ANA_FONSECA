@@ -1,0 +1,26 @@
+models:
+  - name: stg_pessoa__persons
+    description: >
+      Modelo staging que transforma os dados da tabela `persons`,
+      padronizando os nomes das colunas, incluindo o nome completo
+      do cliente e preparando os dados para o consumo nas camadas seguintes.
+    columns:
+      - name: cliente_id
+        description: "Identificador único da pessoa (cliente)."
+        tests:
+          - not_null
+          - unique
+
+      - name: tipo_cliente
+        description: "Tipo de cliente ou pessoa, como 'Individual' ou 'Empresa'."
+
+      - name: email
+        description: "Endereço de e-mail do cliente, se disponível."
+
+      - name: demografia
+        description: "Informações demográficas armazenadas como JSON ou XML."
+
+      - name: nome_completo
+        description: >
+          Nome completo do cliente, construído concatenando primeiro nome,
+          nome do meio (se existir) e último nome.
