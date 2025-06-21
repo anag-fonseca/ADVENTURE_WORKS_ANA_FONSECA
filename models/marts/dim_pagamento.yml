@@ -1,28 +1,30 @@
 models:
   - name: dim_pagamento
     description: >
-      Modelo que consolida as informações das formas de pagamento dos clientes,
-      associando cada cliente ao seu cartão de crédito, incluindo dados como tipo,
-      número e validade do cartão.
+      Dimensão de formas de pagamento utilizadas pelos clientes.
+      Integra dados de cartões de crédito com os clientes a partir das tabelas 
+      `stg_pagamento__creditcard` e `stg_pagamento__personcreditcard`.
+
     columns:
       - name: cartao_id
-        description: "Identificador único do cartão de crédito."
+        description: Identificador único do cartão de crédito.
         tests:
           - not_null
+          - unique
 
       - name: tipo_cartao
-        description: "Tipo do cartão de crédito."
+        description: Tipo do cartão de crédito.
 
       - name: numero_cartao
-        description: "Número do cartão de crédito. Pode estar mascarado por segurança."
+        description: Número do cartão (parcial ou mascarado, se aplicável).
 
       - name: val_mes
-        description: "Mês de validade do cartão."
+        description: Mês de validade do cartão.
 
       - name: val_ano
-        description: "Ano de validade do cartão."
+        description: Ano de validade do cartão.
 
       - name: cliente_id
-        description: "Identificador do cliente associado ao cartão de crédito."
+        description: Identificador do cliente associado ao cartão.
         tests:
           - not_null
