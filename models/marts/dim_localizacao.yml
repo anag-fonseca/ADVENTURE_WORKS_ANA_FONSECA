@@ -1,41 +1,43 @@
 models:
   - name: dim_localizacao
     description: >
-      Modelo dimensional de localização que une informações de endereço,
-      estado, país e entidade de negócio, fornecendo uma visão consolidada
-      da localização dos clientes.
+      Dimensão de localização que integra dados de endereço, estado, país e tipo de endereço
+      associado aos clientes. A fonte vem dos modelos stg_localizacao__address, 
+      stg_localizacao__businessentityaddress, stg_localizacao__countryregion e stg_localizacao__stateprovince.
+
     columns:
       - name: endereco_id
-        description: "Identificador único do endereço."
+        description: Identificador único do endereço.
         tests:
           - not_null
+          - unique
 
       - name: cidade
-        description: "Nome da cidade do endereço."
+        description: Nome da cidade do endereço.
 
       - name: estado_id
-        description: "Chave de referência ao estado/província relacionado ao endereço."
+        description: Identificador do estado.
 
       - name: codigo_id
-        description: "Código de identificação do endereço (postal, ZIP, etc)."
+        description: Código postal do endereço.
 
       - name: estado_codigo
-        description: "Código curto do estado (ex: 'SP', 'NY')."
+        description: Código do estado.
 
       - name: codigo_pais
-        description: "Código do país ao qual o estado pertence."
+        description: Código do país associado ao estado.
 
       - name: estado_nome
-        description: "Nome completo do estado ou província."
+        description: Nome do estado.
 
       - name: territorio_id
-        description: "Identificador do território ao qual o estado pertence."
+        description: Identificador do território do estado.
 
       - name: pais_nome
-        description: "Nome completo do país."
+        description: Nome do país.
 
       - name: cliente_id
-        description: "Identificador da entidade de negócio (cliente) associada ao endereço."
+        description: Identificador do cliente associado ao endereço.
 
       - name: endereco_tipo
-        description: "Tipo de endereço (ex: cobrança, entrega)."
+        description: Tipo de endereço.

@@ -1,0 +1,28 @@
+models:
+  - name: fato_pedido_razao
+    description: >
+      Tabela fato que relaciona os pedidos com os motivos de venda (razões comerciais),
+      unindo os dados de `stg_razao__salesorderheadersalesreason` e `stg_razao__salesreason`.
+
+    columns:
+      - name: pedido_razao_sk
+        description: Chave substituta única da relação entre pedido e razão.
+        tests:
+          - not_null
+          - unique
+
+      - name: pedido_id
+        description: Identificador do pedido de venda.
+        tests:
+          - not_null
+
+      - name: razao_id
+        description: Identificador da razão de venda associada ao pedido.
+        tests:
+          - not_null
+
+      - name: nome_razao
+        description: Nome da razão de venda.
+
+      - name: tipo_razao
+        description: Tipo da razão de venda.

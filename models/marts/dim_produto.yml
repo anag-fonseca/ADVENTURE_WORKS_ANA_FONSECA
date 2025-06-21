@@ -1,62 +1,61 @@
 models:
   - name: dim_produto
     description: >
-      Dimensão de produtos que combina informações detalhadas do produto com
-      suas respectivas subcategorias e categorias. A tabela contém atributos
-      descritivos de cada produto, como tamanho, cor, estilo, além da categoria
-      e subcategoria correspondente.
+      Dimensão de produtos contendo informações detalhadas dos produtos, unidas às suas categorias
+      e subcategorias. Os dados são provenientes das tabelas `stg_produto__product`, 
+      `stg_produto__productcategory` e `stg_produto__productsubcategory`.
 
     columns:
       - name: produto_id
-        description: "Identificador único do produto."
+        description: Identificador único do produto.
         tests:
           - not_null
           - unique
 
       - name: nome_produto
-        description: "Nome descritivo do produto."
+        description: Nome do produto.
 
       - name: produto_numero
-        description: "Código ou número identificador do produto."
+        description: Código ou número interno do produto.
 
       - name: cor
-        description: "Cor do produto, se aplicável."
+        description: Cor do produto.
 
       - name: custo_padrao
-        description: "Custo padrão de produção do produto."
+        description: Custo padrão de fabricação do produto.
 
       - name: lista_preco
-        description: "Preço de venda do produto conforme tabela padrão."
+        description: Preço de lista (sugerido para venda).
 
       - name: tamanho
-        description: "Tamanho do produto"
+        description: Tamanho do produto (quando aplicável).
 
       - name: dias_producao
-        description: "Tempo estimado de produção do produto, em dias."
+        description: Número de dias estimado para produção do produto.
 
       - name: linha_producao
-        description: "Linha de produção responsável pela fabricação do produto."
+        description: Linha de produção associada ao produto.
 
       - name: classe
-        description: "Classificação do produto"
+        description: Classificação do produto.
 
       - name: estilo
-        description: "Estilo do produto, se aplicável."
+        description: Estilo do produto.
 
       - name: modelo_producao
-        description: "Identificador do modelo de produção relacionado ao produto."
+        description: ID do modelo de produção utilizado.
 
       - name: data_descontinuado
-        description: "Data em que o produto foi descontinuado (caso aplicável)."
+        description: Data em que o produto foi descontinuado, se aplicável.
 
       - name: categoria_id
-        description: "Identificador da categoria à qual o produto pertence."
+        description: Identificador da categoria do produto.
 
       - name: categoria_nome
-        description: "Nome da categoria do produto."
+        description: Nome da categoria do produto.
 
       - name: subcategoria_id
-        description: "Identificador da subcategoria do produto."
+        description: Identificador da subcategoria do produto.
 
       - name: subcategoria_nome
-        description: "Nome da subcategoria do produto."
+        description: Nome da subcategoria do produto.

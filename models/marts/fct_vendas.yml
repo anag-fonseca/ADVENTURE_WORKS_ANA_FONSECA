@@ -1,0 +1,87 @@
+models:
+  - name: fct_vendas
+    description: >
+      Fato de vendas construída a partir dos dados de detalhes e cabeçalho de pedidos,
+      incluindo medidas financeiras, informações de cliente, vendedor e status da venda.
+
+    columns:
+      - name: pedido_produto_sk
+        description: Chave substituta única da venda por item (produto por pedido).
+        tests:
+          - unique
+          - not_null
+
+      - name: quantidade_pedido
+        description: Quantidade de unidades do produto vendidas na linha do pedido.
+        tests:
+          - not_null
+
+      - name: produto_id
+        description: Identificador do produto vendido.
+        tests:
+          - not_null
+
+      - name: preco_unitario
+        description: Preço unitário aplicado no produto sem desconto.
+        tests:
+          - not_null
+
+      - name: preco_unitario_desconto
+        description: Valor de desconto no preço unitário do produto.
+
+      - name: pedido_id
+        description: Identificador do pedido.
+
+      - name: data_pedido
+        description: Data em que o pedido foi realizado.
+        tests:
+          - not_null
+
+      - name: status
+        description: Código de status do pedido (1 a 6).
+
+      - name: cliente_id
+        description: Identificador do cliente associado ao pedido.
+        tests:
+          - not_null
+
+      - name: vendedor_id
+        description: Identificador do vendedor responsável pelo pedido.
+
+      - name: territorio_id
+        description: Território de venda.
+
+      - name: cartao_id
+        description: Identificador do cartão de pagamento utilizado.
+
+      - name: subtotal
+        description: Subtotal da venda (sem impostos ou frete).
+
+      - name: imposto
+        description: Valor de imposto aplicado ao pedido.
+
+      - name: frete
+        description: Valor de frete aplicado ao pedido.
+
+      - name: total
+        description: Valor total do pedido (subtotal + imposto + frete).
+
+      - name: valor_bruto
+        description: Valor bruto da venda (quantidade * preço unitário).
+        tests:
+          - not_null
+
+      - name: valor_alocado
+        description: Total do pedido alocado proporcionalmente por item.
+
+      - name: frete_alocado
+        description: Valor do frete alocado proporcionalmente por item.
+
+      - name: imposto_alocado
+        description: Valor do imposto alocado proporcionalmente por item.
+
+      - name: tem_desconto
+        description: Indica se houve aplicação de desconto no item.
+
+      - name: status_2
+        description: Descrição textual do status da venda.

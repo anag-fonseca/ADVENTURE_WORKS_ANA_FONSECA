@@ -41,8 +41,8 @@ models:
     intermediate:
       +schema: int
     marts:
-       materialized: table
-       +schema: marts
+      materialized: table
+      +schema: marts
     staging:
       vendas:
        +schema: stg_vendas
