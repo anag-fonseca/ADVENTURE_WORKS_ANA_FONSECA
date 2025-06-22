@@ -1,5 +1,5 @@
 models:
-  - name: fato_pedido_razao
+  - name: dim_razao
     description: >
       Tabela fato que relaciona os pedidos com os motivos de venda (razões comerciais),
       unindo os dados de `stg_razao__salesorderheadersalesreason` e `stg_razao__salesreason`.
