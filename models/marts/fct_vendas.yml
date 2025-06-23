@@ -74,6 +74,9 @@ models:
       - name: valor_alocado
         description: Total do pedido alocado proporcionalmente por item.
 
+      - name: desconto_alocado
+        description: Desconto alocado proporcionalmente.
+
       - name: frete_alocado
         description: Valor do frete alocado proporcionalmente por item.
 

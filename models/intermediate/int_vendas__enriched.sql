@@ -56,7 +56,7 @@ from salesorderdetail
         cast( 
             (frete/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric) as frete_alocado,
         cast( 
-            (preco_unitario_desconto/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric) as desconto_alocado,
+            (preco_unitario_desconto/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric(18,4)) as desconto_alocado,
         cast( 
             (imposto/ count(pedido_produto_sk) over (partition by pedido_produto_sk)) as numeric) as imposto_alocado,
         case
